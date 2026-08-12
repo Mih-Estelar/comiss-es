@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Comissões de Desenhos</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Pacifico&display=swap');
+
+    :root {
+      --roxo: #7c4dff;
+      --roxo-escuro: #4b278f;
+      --roxo-claro: #eee7ff;
+      --roxo-suave: #f7f3ff;
+      --branco: #ffffff;
+      --texto: #34234f;
+      --texto-claro: #77658f;
+      --sombra: 0 12px 35px rgba(75, 39, 143, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      color: var(--texto);
+      font-family: "Nunito", sans-serif;
+      background:
+        radial-gradient(circle at 10% 10%, #eee7ff 0, transparent 24%),
+        radial-gradient(circle at 90% 20%, #ded0ff 0, transparent 25%),
+        linear-gradient(135deg, #ffffff, #f2edff);
+    }
+
+    body::before {
+      content: "✦  ♡  ✧  ✿  ☆  ♡";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      color: rgba(124, 77, 255, 0.08);
+      font-size: 32px;
+      letter-spacing: 35px;
+      line-height: 100px;
+      pointer-events: none;
+      transform: rotate(-12deg) scale(1.3);
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 55px 20px 30px;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 115px;
+      height: 115px;
+      margin: 0 auto 18px;
+      overflow: hidden;
+      border: 5px solid var(--branco);
+      border-radius: 50%;
+      background: var(--roxo-claro);
+      box-shadow: var(--sombra);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    h1 {
+      color: var(--roxo-escuro);
+      font-family: "Pacifico", cursive;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 400;
+    }
+
+    .subtitle {
+      max-width: 650px;
+      margin: 12px auto 0;
+      color: var(--texto-claro);
+      font-size: 1.1rem;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 20px 0 28px;
+    }
+
+    .tab-button {
+      border: 0;
+      border-radius: 30px;
+      padding: 14px 22px;
+      color: var(--roxo-escuro);
+      font: inherit;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 5px 18px rgba(75, 39, 143, 0.12);
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .tab-button:hover {
+      transform: translateY(-3px);
+      background: var(--branco);
+    }
+
+    .tab-button.active {
+      color: var(--branco);
+      background: linear-gradient(135deg, var(--roxo), var(--roxo-escuro));
+    }
+
+    .tab-content {
+      display: none;
+      animation: aparecer 0.35s ease;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card {
+      margin-bottom: 22px;
+      padding: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: var(--sombra);
+      backdrop-filter: blur(8px);
+    }
+
+    .card h2 {
+      margin-bottom: 18px;
+      color: var(--roxo-escuro);
+      font-size: 1.55rem;
+    }
+
+    .card h3 {
+      margin: 24px 0 12px;
+      color: var(--roxo);
+      font-size: 1.15rem;
+    }
+
+    .intro {
+      text-align: center;
+    }
+
+    .intro p {
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+
+    .price-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      list-style: none;
+    }
+
+    .price-list li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 15px 17px;
+      border-radius: 15px;
+      background: var(--roxo-claro);
+      font-weight: 700;
+    }
+
+    .price {
+      color: var(--roxo-escuro);
+      white-space: nowrap;
+      font-size: 1.05rem;
+    }
+
+    .info-list,
+    .rules-list {
+      display: grid;
+      gap: 12px;
+      padding-left: 22px;
+      line-height: 1.6;
+    }
+
+    .rules-list li::marker {
+      color: var(--roxo);
+    }
+
+    .notice {
+      margin-top: 18px;
+      padding: 17px;
+      border-left: 5px solid var(--roxo);
+      border-radius: 12px;
+      background: var(--roxo-suave);
+      line-height: 1.6;
+    }
+
+    .contact-box {
+      text-align: center;
+    }
+
+    .contact-button {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 14px 25px;
+      border-radius: 30px;
+      color: var(--branco);
+      font-weight: 800;
+      text-decoration: none;
+      background: linear-gradient(135deg, var(--roxo), var(--roxo-escuro));
+      box-shadow: 0 8px 20px rgba(75, 39, 143, 0.25);
+      transition: 0.25s ease;
+    }
+
+    .contact-button:hover {
+      transform: translateY(-3px);
+      filter: brightness(1.08);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .gallery figure {
+      overflow: hidden;
+      margin: 0;
+      border-radius: 18px;
+      background: var(--branco);
+      box-shadow: 0 8px 20px rgba(75, 39, 143, 0.12);
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 280px;
+      display: block;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.06);
+    }
+
+    figcaption {
+      min-height: 70px;
+      padding: 12px;
+      color: var(--roxo-escuro);
+      text-align: center;
+      line-height: 1.5;
+      font-weight: 700;
+    }
+
+    .evaluation-gallery img {
+      height: auto;
+      min-height: 180px;
+      object-fit: contain;
+      background: var(--roxo-suave);
+    }
+
+    footer {
+      padding: 35px 20px 45px;
+      color: var(--texto-claro);
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(35, 18, 52, 0.84);
+    }
+
+    .modal.show {
+      display: flex;
+    }
+
+    .modal img {
+      max-width: min(900px, 95vw);
+      max-height: 85vh;
+      border: 5px solid var(--branco);
+      border-radius: 15px;
+      object-fit: contain;
+      background: var(--branco);
+    }
+
+    .close-modal {
+      position: fixed;
+      top: 20px;
+      right: 25px;
+      border: 0;
+      color: var(--branco);
+      font-size: 2.3rem;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding-top: 35px;
+      }
+
+      .card {
+        padding: 21px;
+      }
+
+      .tab-button {
+        width: 100%;
+      }
+
+      .price-list li {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .gallery img {
+        height: 240px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="avatar">
+      <img
+        src="perfil.jpg"
+        alt="Imagem de perfil da artista"
+      >
+    </div>
+
+    <!-- Altere para o seu nome artístico -->
+    <h1>Comissões da Artista</h1>
+
+    <p class="subtitle">
+      Desenhos personalizados feitos com muito carinho 💜✨
+    </p>
+  </header>
+
+  <main class="container">
+
+    <nav class="tabs" aria-label="Navegação do site">
+      <button class="tab-button active" data-tab="regras">
+        📋 Regras e preços
+      </button>
+
+      <button class="tab-button" data-tab="desenhos">
+        🖼️ Meus desenhos
+      </button>
+
+      <button class="tab-button" data-tab="avaliacoes">
+        💌 Avaliações
+      </button>
+    </nav>
+
+    <!-- PRIMEIRA ABA: REGRAS E PREÇOS -->
+    <section id="regras" class="tab-content active">
+
+      <div class="card intro">
+        <h2>🎨 COMISSÕES ABERTAS! ✨</h2>
+
+        <p>
+          Faço desenhos personalizados! 💜<br>
+          Encomende uma arte feita especialmente para você.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>💰 Tabela de preços</h2>
+
+        <ul class="price-list">
+          <li>
+            <span>Ícone</span>
+            <span class="price">R$ 15</span>
+          </li>
+
+          <li>
+            <span>Desenho da cabeça aos ombros</span>
+            <span class="price">R$ 25</span>
+          </li>
+
+          <li>
+            <span>Desenho até a cintura</span>
+            <span class="price">R$ 30</span>
+          </li>
+
+          <li>
+            <span>Desenho simples estilo Cartoon/bobo</span>
+            <span class="price">R$ 10</span>
+          </li>
+
+          <li>
+            <span>PNG</span>
+            <span class="price">R$ 17</span>
+          </li>
+        </ul>
+
+        <div class="notice">
+          ↳ O PNG inclui 4 expressões de sua escolha.<br>
+          ↳ Cada expressão adicional custa <strong>+R$ 1</strong>.
+        </div>
+
+        <h3>👥 Personagem adicional</h3>
+
+        <p>
+          Mais de um personagem no mesmo desenho:
+          <strong>+R$ 10 por personagem</strong>.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>📌 Pagamento</h2>
+
+        <ul class="info-list">
+          <li>50% do valor antes de começar o desenho.</li>
+          <li>50% restantes após a finalização.</li>
+        </ul>
+
+        <h3>✏️ Alterações</h3>
+
+        <ul class="info-list">
+          <li>Até 2 alterações gratuitamente.</li>
+          <li>A partir da 3ª alteração: +R$ 5 por alteração.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>⚠️ Regras das comissões</h2>
+
+        <ul class="rules-list">
+          <li>Não faço desenhos +18.</li>
+          <li>Não faço gore muito violento.</li>
+          <li>Não faço desenhos com conteúdo preconceituoso ou discriminatório.</li>
+          <li>Se o pedido tiver algo que me deixe desconfortável, posso recusar a comissão.</li>
+          <li>Não peçam desenhos de graça no meu PV.</li>
+          <li>Por favor, não insistam caso eu recuse um pedido.</li>
+        </ul>
+      </div>
+
+      <div class="card contact-box">
+        <h2>💌 Quer fazer um pedido?</h2>
+
+        <p>
+          Entre em contato comigo para conversarmos sobre sua ideia!
+        </p>
+
+        <a
+          class="contact-button"
+          href="https://wa.me/554396637473"
+          target="_blank"
+          rel="noopener"
+        >
+          💬 Falar comigo no WhatsApp
+        </a>
+
+        <p style="margin-top: 18px;">
+          Obrigada por respeitarem meus limites e meu trabalho! 💜✨
+        </p>
+      </div>
+
+    </section>
+
+    <!-- SEGUNDA ABA: DESENHOS -->
+    <section id="desenhos" class="tab-content">
+
+      <div class="card">
+        <h2>🖼️ Meus desenhos</h2>
+
+        <p style="margin-bottom: 22px;">
+          Confira alguns exemplos das minhas artes e comissões.
+        </p>
+
+        <div class="gallery">
+
+          <!-- PRIMEIRO DESENHO: POLIN -->
+          <figure>
+            <img
+              src="personagem-polin.jpg"
+              alt="Desenho do personagem do cliente Polin"
+            >
+
+            <figcaption>
+              <strong>1ª comissão — Polin</strong><br>
+              Desenho personalizado do personagem dele 💜
+            </figcaption>
+          </figure>
+
+          <!-- SEGUNDO DESENHO: BOBO -->
+          <figure>
+            <img
+              src="personagem-bobo.jpg"
+              alt="Ícone personalizado do cliente Bobo"
+            >
+
+            <figcaption>
+              <strong>2ª comissão — Bobo</strong><br>
+              Ícone personalizado do personagem dele ✨
+            </figcaption>
+          </figure>
+
+          <!-- TERCEIRO DESENHO: AZURA -->
+          <figure>
+            <img
+              src="personage-azura.jpg"
+              alt="PNG personalizado da cliente Azura"
+            >
+
+            <figcaption>
+              <strong>3ª comissão — Azura</strong><br>
+              PNG personalizado da personagem dela 💜
+            </figcaption>
+          </figure>
+
+          <!-- QUARTO DESENHO -->
+          <figure>
+            <img
+              src="desenho4.jpg"
+              alt="Outro desenho personalizado"
+            >
+
+            <figcaption>
+              Outro desenho personalizado
+            </figcaption>
+          </figure>
+
+          <!-- QUINTO DESENHO -->
+          <figure>
+            <img
+              src="desenho5.jpg"
+              alt="Outro ícone personalizado"
+            >
+
+            <figcaption>
+              Outro ícone personalizado
+            </figcaption>
+          </figure>
+
+          <!-- SEXTO DESENHO -->
+          <figure>
+            <img
+              src="desenho6.jpg"
+              alt="Outra comissão de desenho finalizada"
+            >
+
+            <figcaption>
+              Outra comissão finalizada ✨
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- TERCEIRA ABA: AVALIAÇÕES -->
+    <section id="avaliacoes" class="tab-content">
+
+      <div class="card">
+        <h2>💌 Avaliações dos clientes</h2>
+
+        <p style="margin-bottom: 22px;">
+          Veja algumas mensagens e avaliações dos meus clientes.
+        </p>
+
+        <div class="gallery evaluation-gallery">
+
+          <!-- PRIMEIRA COMISSÃO -->
+          <figure>
+            <img
+              src="polinavaliacao1.jpg"
+              alt="Primeira avaliação da comissão do cliente Polin"
+            >
+
+            <figcaption>
+              <strong>1ª comissão — Polin</strong><br>
+              Avaliação do desenho do personagem 💜
+            </figcaption>
+          </figure>
+
+          <!-- SEGUNDA COMISSÃO -->
+          <figure>
+            <img
+              src="bobavaliacao2.jpg"
+              alt="Segunda avaliação da comissão do cliente Bobo"
+            >
+
+            <figcaption>
+              <strong>2ª comissão — Bobo</strong><br>
+              Avaliação do ícone personalizado ✨
+            </figcaption>
+          </figure>
+
+          <!-- TERCEIRA COMISSÃO -->
+          <figure>
+            <img
+              src="azuraavaliacao3.jpg"
+              alt="Terceira avaliação da comissão da cliente Azura"
+            >
+
+            <figcaption>
+              <strong>3ª comissão — Azura</strong><br>
+              Avaliação do PNG personalizado 💜
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    Feito com carinho 💜<br>
+    © 2026 — Comissões de desenhos
+  </footer>
+
+  <!-- JANELA PARA AMPLIAR AS IMAGENS -->
+  <div class="modal" id="imageModal">
+    <button class="close-modal" aria-label="Fechar imagem">
+      &times;
+    </button>
+
+    <img id="modalImage" src="" alt="Imagem ampliada">
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll(".tab-button");
+    const contents = document.querySelectorAll(".tab-content");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const tabId = button.dataset.tab;
+
+        buttons.forEach((item) => {
+          item.classList.remove("active");
+        });
+
+        contents.forEach((content) => {
+          content.classList.remove("active");
+        });
+
+        button.classList.add("active");
+        document.getElementById(tabId).classList.add("active");
+      });
+    });
+
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    const closeModal = document.querySelector(".close-modal");
+
+    document.querySelectorAll(".gallery img").forEach((image) => {
+      image.addEventListener("click", () => {
+        modalImage.src = image.src;
+        modalImage.alt = image.alt;
+        modal.classList.add("show");
+      });
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.classList.remove("show");
+    });
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.classList.remove("show");
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        modal.classList.remove("show");
+      }
+    });
+  </script>
+
+</body>
+</html>
