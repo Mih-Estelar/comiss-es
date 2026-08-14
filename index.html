@@ -304,7 +304,7 @@
       background: linear-gradient(135deg, #4b278f, #7c4dff);
     }
 
-    /* GALERIA */
+    /* GALERIAS */
 
     .gallery {
       display: grid;
@@ -347,6 +347,43 @@
       min-height: 180px;
       object-fit: contain;
       background: var(--roxo-suave);
+    }
+
+    /* SEÇÕES ANTIGAS */
+
+    .old-commissions,
+    .old-reviews {
+      margin-top: 42px;
+      padding-top: 30px;
+      border-top: 3px solid var(--roxo-claro);
+    }
+
+    .old-commissions h2,
+    .old-reviews h2 {
+      margin-bottom: 10px;
+      color: var(--roxo-escuro);
+      text-align: center;
+      font-size: 1.8rem;
+    }
+
+    .old-description {
+      margin-bottom: 24px;
+      color: var(--texto-claro);
+      text-align: center;
+    }
+
+    .month-section {
+      margin-bottom: 38px;
+    }
+
+    .month-section > h3 {
+      margin-bottom: 18px;
+      padding: 12px 16px;
+      border-left: 5px solid var(--roxo);
+      border-radius: 12px;
+      color: var(--roxo-escuro);
+      background: var(--roxo-suave);
+      font-size: 1.45rem;
     }
 
     /* FILA DE ESPERA */
@@ -429,7 +466,7 @@
       line-height: 1.6;
     }
 
-    /* MODAL DAS IMAGENS */
+    /* MODAL */
 
     .modal {
       display: none;
@@ -499,10 +536,7 @@
 
   <header>
     <div class="avatar">
-      <img
-        src="perfil.jpg"
-        alt="Imagem de perfil da Mih"
-      >
+      <img src="perfil.jpg" alt="Imagem de perfil da Mih">
     </div>
 
     <h1>COMISSÕES DA MIH</h1>
@@ -539,7 +573,7 @@
 
     </nav>
 
-    <!-- PRIMEIRA ABA: REGRAS E PREÇOS -->
+    <!-- PRIMEIRA ABA: REGRAS -->
     <section id="regras" class="tab-content active">
 
       <div class="card intro">
@@ -630,7 +664,6 @@
           Entre em contato comigo para conversarmos sobre sua ideia!
         </p>
 
-        <!-- WHATSAPP -->
         <a
           class="contact-button"
           href="https://wa.me/554396637473"
@@ -640,15 +673,12 @@
           💬 Falar comigo no WhatsApp
         </a>
 
-        <!-- REDES SOCIAIS -->
         <div class="social-section">
 
-          <!-- REDES PRINCIPAIS -->
           <div class="social-group">
             <h3>🌟 Mih Estelar — VTuber e jogos</h3>
 
             <div class="social-buttons">
-
               <a
                 class="social-button youtube"
                 href="https://www.youtube.com/@Mih_Estelar"
@@ -666,16 +696,13 @@
               >
                 ♪ TikTok principal
               </a>
-
             </div>
           </div>
 
-          <!-- REDES DE DESENHOS -->
           <div class="social-group">
             <h3>🎨 Mih Studio — desenhos</h3>
 
             <div class="social-buttons">
-
               <a
                 class="social-button youtube"
                 href="https://www.youtube.com/@zemerlot"
@@ -693,7 +720,6 @@
               >
                 ♪ TikTok de desenhos
               </a>
-
             </div>
           </div>
 
@@ -706,18 +732,31 @@
 
     </section>
 
-    <!-- SEGUNDA ABA: MINHAS COMISSÕES -->
+    <!-- SEGUNDA ABA: COMISSÕES -->
     <section id="comissoes" class="tab-content">
 
       <div class="card">
         <h2>🎨 Minhas comissões</h2>
 
         <p style="margin-bottom: 22px;">
-          Confira algumas das comissões que já fiz para meus clientes.
+          Confira minhas comissões novas e antigas.
         </p>
 
-        <div class="gallery">
+        <!-- COMISSÕES NOVAS -->
+        <h3>✨ Comissões recentes</h3>
 
+        <div class="gallery">
+<figure>
+  <img
+    src="space.jpg"
+    alt="Desenho com vários personagens da série do cliente Space"
+  >
+
+  <figcaption>
+    <strong>Space</strong><br>
+    Desenho com vários personagens da série dele 💜
+  </figcaption>
+</figure>
           <figure>
             <img
               src="personagem-polin.jpg"
@@ -725,7 +764,7 @@
             >
 
             <figcaption>
-              <strong>1ª comissão — Polin</strong><br>
+              <strong>Polin</strong><br>
               Desenho personalizado do personagem dele 💜
             </figcaption>
           </figure>
@@ -737,7 +776,7 @@
             >
 
             <figcaption>
-              <strong>2ª comissão — Bobo</strong><br>
+              <strong>Bobo</strong><br>
               Ícone personalizado do personagem dele ✨
             </figcaption>
           </figure>
@@ -749,267 +788,384 @@
             >
 
             <figcaption>
-              <strong>3ª comissão — Azura</strong><br>
+              <strong>Azura</strong><br>
               PNG personalizado da personagem dela 💜
             </figcaption>
           </figure>
 
         </div>
+
+        <!-- COMISSÕES ANTIGAS COM FOTOS -->
+        <div class="old-commissions">
+
+          <h2>📚 Comissões antigas</h2>
+
+          <p class="old-description">
+            Comissões anteriores com suas respectivas imagens.
+          </p>
+
+          <div class="gallery">
+
+            <figure>
+              <img src="kaze.jpg" alt="Comissão antiga do cliente Kaze">
+
+              <figcaption>
+                <strong>Novembro/2025 — Kaze</strong><br>
+                1ª comissão Comissão antiga💜
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="mizuki.jpg" alt="Comissão antiga da cliente Mizuki">
+
+              <figcaption>
+                <strong>Novembro/2025 — Mizuki</strong><br>
+                Comissão antiga
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="zakio.jpg" alt="Comissão antiga do cliente Zakio">
+
+              <figcaption>
+                <strong>Novembro/2025 — Zakio</strong><br>
+                Comissão antiga
+              </figcaption>
+            </figure>
+
+            
+            <figure>
+              <img src="idris.jpg" alt="Comissão antiga do cliente Idris VTuber BR">
+
+              <figcaption>
+                <strong>Dezembro/2025 — Idris VTuber BR</strong><br>
+                Comissão antiga
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="kuro1.jpg" alt="Primeira comissão antiga do cliente Kuro">
+
+              <figcaption>
+                <strong>Janeiro/2026 — Kuro</strong><br>
+                1ª comissão Comissão antiga✨
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="kuro2.jpg" alt="Segunda comissão antiga do cliente Kuro">
+
+              <figcaption>
+                <strong>Janeiro/2026 — Kuro</strong><br>
+                2ª comissão Comissão antiga ✨
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="yumi.jpg" alt="Comissão antiga da cliente Yumi">
+
+              <figcaption>
+                <strong>Janeiro/2026 — Yumi</strong><br>
+                Sem avaliação do cliente
+                Comissão antiga
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="carnerinho1.jpg" alt="Primeira comissão antiga do cliente Carnerinho">
+
+              <figcaption>
+                <strong>Fevereiro/2026 — Carnerinho</strong><br>
+                Comissão antiga 
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="andre-qfcraft.jpg" alt="Comissão antiga do cliente André QFCraft">
+
+              <figcaption>
+                <strong>Fevereiro/2026 — André_QFCraft</strong><br>
+                Comissão antiga
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="kaue.jpg" alt="Comissão antiga do cliente Kauê">
+
+              <figcaption>
+                <strong>Março/2026 — Kauê</strong><br>
+              Comissão antiga
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="carnerinho2.jpg" alt="Segunda comissão antiga do cliente Carnerinho">
+
+              <figcaption>
+                <strong>Maio/2026 — Carnerinho</strong><br>
+                2ª comissão  Comissão antiga✨
+              </figcaption>
+            </figure>
+
+          </div>
+        </div>
+
       </div>
 
     </section>
 
-   <!-- TERCEIRA ABA: MEUS DESENHOS -->
-<section id="estilos" class="tab-content">
+    <!-- TERCEIRA ABA: DESENHOS -->
+    <section id="estilos" class="tab-content">
 
-  <div class="card">
-    <h2>🖼️ Meus desenhos</h2>
+      <div class="card">
+        <h2>🖼️ Meus desenhos</h2>
 
-    <p style="margin-bottom: 22px;">
-      Veja meus desenhos organizados do mais recente para o mais antigo.
-    </p>
+        <p style="margin-bottom: 22px;">
+          Veja meus desenhos do mais recente para o mais antigo.
+        </p>
 
-    <!-- AGOSTO: MAIS RECENTE -->
-    <div class="month-section">
-      <h3>💜 Agosto 2026 — 1 desenho</h3>
+        <!-- AGOSTO -->
+        <div class="month-section">
+          <h3>💜 Agosto 2026 — 1 desenho</h3>
 
-      <div class="gallery">
-        <figure>
-          <img
-            src="desenho-agosto-01.jpg"
-            alt="Desenho de agosto 1"
-          >
+          <div class="gallery">
+            <figure>
+              <img
+                src="desenho-agosto-01.jpg"
+                alt="Desenho de agosto de 2026"
+              >
 
-          <figcaption>
-            Agosto — Desenho 1
-          </figcaption>
-        </figure>
+              <figcaption>
+                Agosto 2026 — Desenho 1
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- JULHO -->
+        <div class="month-section">
+          <h3>🌙 Julho 2026 — 4 desenhos</h3>
+
+          <div class="gallery">
+
+            <figure>
+              <img src="desenho-julho-01.jpg" alt="Desenho de julho 1">
+              <figcaption>Julho 2026 — Desenho 1</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-julho-02.jpg" alt="Desenho de julho 2">
+              <figcaption>Julho 2026 — Desenho 2</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-julho-03.jpg" alt="Desenho de julho 3">
+              <figcaption>Julho 2026 — Desenho 3</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-julho-04.jpg" alt="Desenho de julho 4">
+              <figcaption>Julho 2026 — Desenho 4</figcaption>
+            </figure>
+
+          </div>
+        </div>
+
+        <!-- JUNHO -->
+        <div class="month-section">
+          <h3>☀️ Junho 2026 — 3 desenhos</h3>
+
+          <div class="gallery">
+
+            <figure>
+              <img src="desenho-junho-01.jpg" alt="Desenho de junho 1">
+              <figcaption>Junho 2026 — Desenho 1</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-junho-02.jpg" alt="Desenho de junho 2">
+              <figcaption>Junho 2026 — Desenho 2</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-junho-03.jpg" alt="Desenho de junho 3">
+              <figcaption>Junho 2026 — Desenho 3</figcaption>
+            </figure>
+
+          </div>
+        </div>
+
+        <!-- MAIO -->
+        <div class="month-section">
+          <h3>🌼 Maio 2026 — 7 desenhos</h3>
+
+          <div class="gallery">
+
+            <figure>
+              <img src="desenho-maio-01.jpg" alt="Desenho de maio 1">
+              <figcaption>Maio 2026 — Desenho 1</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-maio-02.jpg" alt="Desenho de maio 2">
+              <figcaption>Maio 2026 — Desenho 2</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-maio-03.jpg" alt="Desenho de maio 3">
+              <figcaption>Maio 2026 — Desenho 3</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-maio-04.jpg" alt="Desenho de maio 4">
+              <figcaption>Maio 2026 — Desenho 4</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-maio-05.jpg" alt="Desenho de maio 5">
+              <figcaption>Maio 2026 — Desenho 5</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-maio-06.jpg" alt="Desenho de maio 6">
+              <figcaption>Maio 2026 — Desenho 6</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-maio-07.jpg" alt="Desenho de maio 7">
+              <figcaption>Maio 2026 — Desenho 7</figcaption>
+            </figure>
+
+          </div>
+        </div>
+
+        <!-- ABRIL -->
+        <div class="month-section">
+          <h3>🌿 Abril 2026 — 7 desenhos</h3>
+
+          <div class="gallery">
+
+            <figure>
+              <img src="desenho-abril-01.jpg" alt="Desenho de abril 1">
+              <figcaption>Abril 2026 — Desenho 1</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-abril-02.jpg" alt="Desenho de abril 2">
+              <figcaption>Abril 2026 — Desenho 2</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-abril-03.jpg" alt="Desenho de abril 3">
+              <figcaption>Abril 2026 — Desenho 3</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-abril-04.jpg" alt="Desenho de abril 4">
+              <figcaption>Abril 2026 — Desenho 4</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-abril-05.jpg" alt="Desenho de abril 5">
+              <figcaption>Abril 2026 — Desenho 5</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-abril-06.jpg" alt="Desenho de abril 6">
+              <figcaption>Abril 2026 — Desenho 6</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-abril-07.jpg" alt="Desenho de abril 7">
+              <figcaption>Abril 2026 — Desenho 7</figcaption>
+            </figure>
+
+          </div>
+        </div>
+
+        <!-- MARÇO -->
+        <div class="month-section">
+          <h3>🌸 Março 2026 — 14 desenhos</h3>
+
+          <div class="gallery">
+
+            <figure>
+              <img src="desenho-marco-01.jpg" alt="Desenho de março 1">
+              <figcaption>Março 2026 — Desenho 1</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-marco-02.jpg" alt="Desenho de março 2">
+              <figcaption>Março 2026 — Desenho 2</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-marco-03.jpg" alt="Desenho de março 3">
+              <figcaption>Março 2026 — Desenho 3</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-marco-04.jpg" alt="Desenho de março 4">
+              <figcaption>Março 2026 — Desenho 4</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-marco-05.jpg" alt="Desenho de março 5">
+              <figcaption>Março 2026 — Desenho 5</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-marco-06.jpg" alt="Desenho de março 6">
+              <figcaption>Março 2026 — Desenho 6</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-marco-07.jpg" alt="Desenho de março 7">
+              <figcaption>Março 2026 — Desenho 7</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-marco-08.jpg" alt="Desenho de março 8">
+              <figcaption>Março 2026 — Desenho 8</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-marco-09.jpg" alt="Desenho de março 9">
+              <figcaption>Março 2026 — Desenho 9</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-marco-10.jpg" alt="Desenho de março 10">
+              <figcaption>Março 2026 — Desenho 10</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-marco-11.jpg" alt="Desenho de março 11">
+              <figcaption>Março 2026 — Desenho 11</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-marco-12.jpg" alt="Desenho de março 12">
+              <figcaption>Março 2026 — Desenho 12</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-marco-13.jpg" alt="Desenho de março 13">
+              <figcaption>Março 2026 — Desenho 13</figcaption>
+            </figure>
+
+            <figure>
+              <img src="desenho-marco-14.jpg" alt="Desenho de março 14">
+              <figcaption>Março 2026 — Desenho 14</figcaption>
+            </figure>
+
+          </div>
+        </div>
+
       </div>
-    </div>
 
-    <!-- JULHO -->
-    <div class="month-section">
-      <h3>🌙 Julho 2026 — 4 desenhos</h3>
+    </section>
 
-      <div class="gallery">
-
-        <figure>
-          <img src="desenho-julho-01.jpg" alt="Desenho de julho 1">
-          <figcaption>Julho — Desenho 1</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-julho-02.jpg" alt="Desenho de julho 2">
-          <figcaption>Julho — Desenho 2</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-julho-03.jpg" alt="Desenho de julho 3">
-          <figcaption>Julho — Desenho 3</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-julho-04.jpg" alt="Desenho de julho 4">
-          <figcaption>Julho — Desenho 4</figcaption>
-        </figure>
-
-      </div>
-    </div>
-
-    <!-- JUNHO -->
-    <div class="month-section">
-      <h3>☀️ Junho 2026 — 3 desenhos</h3>
-
-      <div class="gallery">
-
-        <figure>
-          <img src="desenho-junho-01.jpg" alt="Desenho de junho 1">
-          <figcaption>Junho — Desenho 1</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-junho-02.jpg" alt="Desenho de junho 2">
-          <figcaption>Junho — Desenho 2</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-junho-03.jpg" alt="Desenho de junho 3">
-          <figcaption>Junho — Desenho 3</figcaption>
-        </figure>
-
-      </div>
-    </div>
-
-    <!-- MAIO -->
-    <div class="month-section">
-      <h3>🌼 Maio 2026 — 7 desenhos</h3>
-
-      <div class="gallery">
-
-        <figure>
-          <img src="desenho-maio-01.jpg" alt="Desenho de maio 1">
-          <figcaption>Maio — Desenho 1</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-maio-02.jpg" alt="Desenho de maio 2">
-          <figcaption>Maio — Desenho 2</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-maio-03.jpg" alt="Desenho de maio 3">
-          <figcaption>Maio — Desenho 3</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-maio-04.jpg" alt="Desenho de maio 4">
-          <figcaption>Maio — Desenho 4</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-maio-05.jpg" alt="Desenho de maio 5">
-          <figcaption>Maio — Desenho 5</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-maio-06.jpg" alt="Desenho de maio 6">
-          <figcaption>Maio — Desenho 6</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-maio-07.jpg" alt="Desenho de maio 7">
-          <figcaption>Maio — Desenho 7</figcaption>
-        </figure>
-
-      </div>
-    </div>
-
-    <!-- ABRIL -->
-    <div class="month-section">
-      <h3>🌿 Abril 2026 — 7 desenhos</h3>
-
-      <div class="gallery">
-
-        <figure>
-          <img src="desenho-abril-01.jpg" alt="Desenho de abril 1">
-          <figcaption>Abril — Desenho 1</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-abril-02.jpg" alt="Desenho de abril 2">
-          <figcaption>Abril — Desenho 2</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-abril-03.jpg" alt="Desenho de abril 3">
-          <figcaption>Abril — Desenho 3</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-abril-04.jpg" alt="Desenho de abril 4">
-          <figcaption>Abril — Desenho 4</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-abril-05.jpg" alt="Desenho de abril 5">
-          <figcaption>Abril — Desenho 5</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-abril-06.jpg" alt="Desenho de abril 6">
-          <figcaption>Abril — Desenho 6</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-abril-07.jpg" alt="Desenho de abril 7">
-          <figcaption>Abril — Desenho 7</figcaption>
-        </figure>
-
-      </div>
-    </div>
-
-    <!-- MARÇO: MAIS ANTIGO -->
-    <div class="month-section">
-      <h3>🌸 Março 2026 — 14 desenhos</h3>
-
-      <div class="gallery">
-
-        <figure>
-          <img src="desenho-marco-01.jpg" alt="Desenho de março 1">
-          <figcaption>Março — Desenho 1</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-marco-02.jpg" alt="Desenho de março 2">
-          <figcaption>Março — Desenho 2</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-marco-03.jpg" alt="Desenho de março 3">
-          <figcaption>Março — Desenho 3</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-marco-04.jpg" alt="Desenho de março 4">
-          <figcaption>Março — Desenho 4</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-marco-05.jpg" alt="Desenho de março 5">
-          <figcaption>Março — Desenho 5</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-marco-06.jpg" alt="Desenho de março 6">
-          <figcaption>Março — Desenho 6</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-marco-07.jpg" alt="Desenho de março 7">
-          <figcaption>Março — Desenho 7</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-marco-08.jpg" alt="Desenho de março 8">
-          <figcaption>Março — Desenho 8</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-marco-09.jpg" alt="Desenho de março 9">
-          <figcaption>Março — Desenho 9</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-marco-10.jpg" alt="Desenho de março 10">
-          <figcaption>Março — Desenho 10</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-marco-11.jpg" alt="Desenho de março 11">
-          <figcaption>Março — Desenho 11</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-marco-12.jpg" alt="Desenho de março 12">
-          <figcaption>Março — Desenho 12</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-marco-13.jpg" alt="Desenho de março 13">
-          <figcaption>Março — Desenho 13</figcaption>
-        </figure>
-
-        <figure>
-          <img src="desenho-marco-14.jpg" alt="Desenho de março 14">
-          <figcaption>Março — Desenho 14</figcaption>
-        </figure>
-
-      </div>
-    </div>
-
-  </div>
-
-</section>
     <!-- QUARTA ABA: AVALIAÇÕES -->
     <section id="avaliacoes" class="tab-content">
 
@@ -1017,19 +1173,34 @@
         <h2>💌 Avaliações dos clientes</h2>
 
         <p style="margin-bottom: 22px;">
-          Veja algumas mensagens e avaliações dos meus clientes.
+          As avaliações novas aparecem primeiro.
         </p>
+
+        <!-- AVALIAÇÕES NOVAS -->
+        <h3>✨ Avaliações recentes</h3>
 
         <div class="gallery evaluation-gallery">
 
           <figure>
+  <img
+    src="spaceavaliacao.jpg"
+    alt="Avaliação do desenho com vários personagens da série do cliente Space"
+  >
+
+  <figcaption>
+    <strong>Agosto/2026 — Space</strong><br>
+   Avaliação do desenho com vários personagens da série do Space
+  </figcaption>
+</figure>
+
+          <figure>
             <img
               src="polinavaliacao1.jpg"
-              alt="Primeira avaliação da comissão do cliente Polin"
+              alt="Avaliação da comissão do cliente Polin"
             >
 
             <figcaption>
-              <strong>1ª comissão — Polin</strong><br>
+              <strong>Polin</strong><br>
               Avaliação do desenho do personagem 💜
             </figcaption>
           </figure>
@@ -1037,11 +1208,11 @@
           <figure>
             <img
               src="bobavaliacao2.jpg"
-              alt="Segunda avaliação da comissão do cliente Bobo"
+              alt="Avaliação da comissão do cliente Bobo"
             >
 
             <figcaption>
-              <strong>2ª comissão — Bobo</strong><br>
+              <strong>Bobo</strong><br>
               Avaliação do ícone personalizado ✨
             </figcaption>
           </figure>
@@ -1049,16 +1220,141 @@
           <figure>
             <img
               src="azuraavaliacao3.jpg"
-              alt="Terceira avaliação da comissão da cliente Azura"
+              alt="Avaliação da comissão da cliente Azura"
             >
 
             <figcaption>
-              <strong>3ª comissão — Azura</strong><br>
+              <strong>Azura</strong><br>
               Avaliação do PNG personalizado 💜
             </figcaption>
           </figure>
 
         </div>
+
+        <!-- AVALIAÇÕES ANTIGAS COM FOTOS -->
+        <div class="old-reviews">
+
+          <h2>📚 Avaliações antigas</h2>
+
+          <p class="old-description">
+            Avaliações anteriores com suas respectivas imagens.
+          </p>
+
+          <div class="gallery evaluation-gallery">
+
+            <figure>
+              <img src="kazeavaliacao.jpg" alt="Avaliação antiga do cliente Kaze">
+
+              <figcaption>
+                <strong>Novembro/2025 — Kaze</strong><br>
+                1ª comissão Avaliação antiga💜
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="mizukiavaliacao.jpg" alt="Avaliação antiga da cliente Mizuki">
+
+              <figcaption>
+                <strong>Novembro/2025 — Mizuki</strong><br>
+                Avaliação antiga
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="zakioavaliacao.jpg" alt="Avaliação antiga do cliente Zakio">
+
+              <figcaption>
+                <strong>Novembro/2025 — Zakio</strong><br>
+                Avaliação antiga
+              </figcaption>
+            </figure>
+
+
+            <figure>
+              <img src="idrisavaliacao.jpg" alt="Avaliação antiga do cliente Idris VTuber BR">
+
+              <figcaption>
+                <strong>Dezembro/2025 — Idris VTuber BR</strong><br>
+                Avaliação antiga
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="kuroavaliacao1.jpg" alt="Primeira avaliação antiga do cliente Kuro">
+
+              <figcaption>
+                <strong>Janeiro/2026 — Kuro</strong><br>
+                1ª comissão Avaliação antiga✨
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="kuroavaliacao2.jpg" alt="Segunda avaliação antiga do cliente Kuro">
+
+              <figcaption>
+                <strong>Janeiro/2026 — Kuro</strong><br>
+                2ª comissão Avaliação antiga✨
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="yumiavaliacao.jpg" alt="Avaliação antiga da cliente Yumi">
+
+              <figcaption>
+                <strong>Janeiro/2026 — Yumi</strong><br>
+                Sem avaliação do cliente
+                Avaliação antiga
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img
+                src="carnerinhoavaliacao1.jpg"
+                alt="Primeira avaliação antiga do cliente Carnerinho"
+              >
+
+              <figcaption>
+                <strong>Fevereiro/2026 — Carnerinho</strong><br>
+                Avaliação antiga
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img
+                src="andreqfcraftavaliacao.jpg"
+                alt="Avaliação antiga do cliente André QFCraft"
+              >
+
+              <figcaption>
+                <strong>Fevereiro/2026 — André_QFCraft</strong><br>
+                Avaliação antiga
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="kaueavaliacao.jpg" alt="Avaliação antiga do cliente Kauê">
+
+              <figcaption>
+                <strong>Março/2026 — Kauê</strong><br>
+               Avaliação antiga
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img
+                src="carnerinhoavaliacao2.jpg"
+                alt="Segunda avaliação antiga do cliente Carnerinho"
+              >
+
+              <figcaption>
+                <strong>Maio/2026 — Carnerinho</strong><br>
+                2ª comissão Avaliação antiga✨
+              </figcaption>
+            </figure>
+
+          </div>
+        </div>
+
       </div>
 
     </section>
@@ -1162,7 +1458,7 @@
     © 2026 — COMISSÕES DA MIH
   </footer>
 
-  <!-- MODAL PARA AMPLIAR AS IMAGENS -->
+  <!-- MODAL DE IMAGENS -->
   <div class="modal" id="imageModal">
 
     <button
@@ -1173,15 +1469,11 @@
       &times;
     </button>
 
-    <img
-      id="modalImage"
-      src=""
-      alt="Imagem ampliada"
-    >
+    <img id="modalImage" src="" alt="Imagem ampliada">
 
   </div>
 
-  <!-- JAVASCRIPT DAS ABAS E IMAGENS -->
+  <!-- JAVASCRIPT -->
   <script>
     const botoes = document.querySelectorAll(".tab-button");
     const abas = document.querySelectorAll(".tab-content");
