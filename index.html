@@ -116,7 +116,7 @@
       color: var(--roxo-escuro);
       font: inherit;
       font-weight: 800;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.9);
       box-shadow: 0 5px 18px rgba(75, 39, 143, 0.12);
       cursor: pointer;
       transition: 0.25s ease;
@@ -251,6 +251,61 @@
       filter: brightness(1.08);
     }
 
+    /* REDES SOCIAIS */
+
+    .social-section {
+      margin-top: 25px;
+      text-align: center;
+    }
+
+    .social-group {
+      margin-bottom: 25px;
+    }
+
+    .social-group h3 {
+      margin-bottom: 15px;
+      color: var(--roxo-escuro);
+      font-size: 1.45rem;
+    }
+
+    .social-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .social-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-width: 190px;
+      padding: 13px 18px;
+      border-radius: 30px;
+      color: var(--branco);
+      font-weight: 800;
+      text-decoration: none;
+      background: linear-gradient(135deg, var(--roxo), var(--roxo-escuro));
+      box-shadow: 0 7px 18px rgba(75, 39, 143, 0.2);
+      transition: 0.25s ease;
+    }
+
+    .social-button:hover {
+      transform: translateY(-4px);
+      filter: brightness(1.08);
+    }
+
+    .social-button.youtube {
+      background: linear-gradient(135deg, #7c4dff, #4b278f);
+    }
+
+    .social-button.tiktok {
+      background: linear-gradient(135deg, #4b278f, #7c4dff);
+    }
+
+    /* GALERIA */
+
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -353,12 +408,28 @@
       font-weight: 800;
     }
 
+    .empty-queue {
+      border: 2px dashed var(--roxo);
+      background: var(--roxo-suave);
+    }
+
+    .empty-queue h3 {
+      color: var(--roxo);
+    }
+
+    .empty-queue .queue-status {
+      color: var(--roxo);
+      background: var(--branco);
+    }
+
     footer {
       padding: 35px 20px 45px;
       color: var(--texto-claro);
       text-align: center;
       line-height: 1.6;
     }
+
+    /* MODAL DAS IMAGENS */
 
     .modal {
       display: none;
@@ -408,6 +479,10 @@
         width: 100%;
       }
 
+      .social-button {
+        width: 100%;
+      }
+
       .price-list li {
         align-items: flex-start;
         flex-direction: column;
@@ -442,19 +517,23 @@
     <!-- MENU DAS ABAS -->
     <nav class="tabs" aria-label="Navegação do site">
 
-      <button class="tab-button active" data-tab="regras">
+      <button type="button" class="tab-button active" data-tab="regras">
         📋 Regras e preços
       </button>
 
-      <button class="tab-button" data-tab="desenhos">
+      <button type="button" class="tab-button" data-tab="comissoes">
+        🎨 Minhas comissões
+      </button>
+
+      <button type="button" class="tab-button" data-tab="estilos">
         🖼️ Meus desenhos
       </button>
 
-      <button class="tab-button" data-tab="avaliacoes">
+      <button type="button" class="tab-button" data-tab="avaliacoes">
         💌 Avaliações
       </button>
 
-      <button class="tab-button" data-tab="fila">
+      <button type="button" class="tab-button" data-tab="fila">
         ⏳ Fila de espera
       </button>
 
@@ -551,6 +630,7 @@
           Entre em contato comigo para conversarmos sobre sua ideia!
         </p>
 
+        <!-- WHATSAPP -->
         <a
           class="contact-button"
           href="https://wa.me/554396637473"
@@ -560,6 +640,65 @@
           💬 Falar comigo no WhatsApp
         </a>
 
+        <!-- REDES SOCIAIS -->
+        <div class="social-section">
+
+          <!-- REDES PRINCIPAIS -->
+          <div class="social-group">
+            <h3>🌟 Mih Estelar — VTuber e jogos</h3>
+
+            <div class="social-buttons">
+
+              <a
+                class="social-button youtube"
+                href="https://www.youtube.com/@Mih_Estelar"
+                target="_blank"
+                rel="noopener"
+              >
+                ▶️ YouTube principal
+              </a>
+
+              <a
+                class="social-button tiktok"
+                href="https://www.tiktok.com/@mih_estelar"
+                target="_blank"
+                rel="noopener"
+              >
+                ♪ TikTok principal
+              </a>
+
+            </div>
+          </div>
+
+          <!-- REDES DE DESENHOS -->
+          <div class="social-group">
+            <h3>🎨 Mih Studio — desenhos</h3>
+
+            <div class="social-buttons">
+
+              <a
+                class="social-button youtube"
+                href="https://www.youtube.com/@zemerlot"
+                target="_blank"
+                rel="noopener"
+              >
+                ▶️ YouTube de desenhos
+              </a>
+
+              <a
+                class="social-button tiktok"
+                href="https://www.tiktok.com/@mih_studio_br"
+                target="_blank"
+                rel="noopener"
+              >
+                ♪ TikTok de desenhos
+              </a>
+
+            </div>
+          </div>
+
+        </div>
+
         <p style="margin-top: 18px;">
           Obrigada por respeitarem meus limites e meu trabalho! 💜✨
         </p>
@@ -567,14 +706,14 @@
 
     </section>
 
-    <!-- SEGUNDA ABA: DESENHOS -->
-    <section id="desenhos" class="tab-content">
+    <!-- SEGUNDA ABA: MINHAS COMISSÕES -->
+    <section id="comissoes" class="tab-content">
 
       <div class="card">
-        <h2>🖼️ Meus desenhos</h2>
+        <h2>🎨 Minhas comissões</h2>
 
         <p style="margin-bottom: 22px;">
-          Confira alguns exemplos das minhas artes e comissões.
+          Confira algumas das comissões que já fiz para meus clientes.
         </p>
 
         <div class="gallery">
@@ -615,45 +754,263 @@
             </figcaption>
           </figure>
 
-          <figure>
-            <img
-              src="desenho4.jpg"
-              alt="Outro desenho personalizado"
-            >
-
-            <figcaption>
-              Outro desenho personalizado
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img
-              src="desenho5.jpg"
-              alt="Outro ícone personalizado"
-            >
-
-            <figcaption>
-              Outro ícone personalizado
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img
-              src="desenho6.jpg"
-              alt="Outra comissão de desenho finalizada"
-            >
-
-            <figcaption>
-              Outra comissão finalizada ✨
-            </figcaption>
-          </figure>
-
         </div>
       </div>
 
     </section>
 
-    <!-- TERCEIRA ABA: AVALIAÇÕES -->
+   <!-- TERCEIRA ABA: MEUS DESENHOS -->
+<section id="estilos" class="tab-content">
+
+  <div class="card">
+    <h2>🖼️ Meus desenhos</h2>
+
+    <p style="margin-bottom: 22px;">
+      Veja meus desenhos organizados do mais recente para o mais antigo.
+    </p>
+
+    <!-- AGOSTO: MAIS RECENTE -->
+    <div class="month-section">
+      <h3>💜 Agosto — 1 desenho</h3>
+
+      <div class="gallery">
+        <figure>
+          <img
+            src="desenho-agosto-01.jpg"
+            alt="Desenho de agosto 1"
+          >
+
+          <figcaption>
+            Agosto — Desenho 1
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- JULHO -->
+    <div class="month-section">
+      <h3>🌙 Julho — 4 desenhos</h3>
+
+      <div class="gallery">
+
+        <figure>
+          <img src="desenho-julho-01.jpg" alt="Desenho de julho 1">
+          <figcaption>Julho — Desenho 1</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-julho-02.jpg" alt="Desenho de julho 2">
+          <figcaption>Julho — Desenho 2</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-julho-03.jpg" alt="Desenho de julho 3">
+          <figcaption>Julho — Desenho 3</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-julho-04.jpg" alt="Desenho de julho 4">
+          <figcaption>Julho — Desenho 4</figcaption>
+        </figure>
+
+      </div>
+    </div>
+
+    <!-- JUNHO -->
+    <div class="month-section">
+      <h3>☀️ Junho — 3 desenhos</h3>
+
+      <div class="gallery">
+
+        <figure>
+          <img src="desenho-junho-01.jpg" alt="Desenho de junho 1">
+          <figcaption>Junho — Desenho 1</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-junho-02.jpg" alt="Desenho de junho 2">
+          <figcaption>Junho — Desenho 2</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-junho-03.jpg" alt="Desenho de junho 3">
+          <figcaption>Junho — Desenho 3</figcaption>
+        </figure>
+
+      </div>
+    </div>
+
+    <!-- MAIO -->
+    <div class="month-section">
+      <h3>🌼 Maio — 7 desenhos</h3>
+
+      <div class="gallery">
+
+        <figure>
+          <img src="desenho-maio-01.jpg" alt="Desenho de maio 1">
+          <figcaption>Maio — Desenho 1</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-maio-02.jpg" alt="Desenho de maio 2">
+          <figcaption>Maio — Desenho 2</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-maio-03.jpg" alt="Desenho de maio 3">
+          <figcaption>Maio — Desenho 3</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-maio-04.jpg" alt="Desenho de maio 4">
+          <figcaption>Maio — Desenho 4</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-maio-05.jpg" alt="Desenho de maio 5">
+          <figcaption>Maio — Desenho 5</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-maio-06.jpg" alt="Desenho de maio 6">
+          <figcaption>Maio — Desenho 6</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-maio-07.jpg" alt="Desenho de maio 7">
+          <figcaption>Maio — Desenho 7</figcaption>
+        </figure>
+
+      </div>
+    </div>
+
+    <!-- ABRIL -->
+    <div class="month-section">
+      <h3>🌿 Abril — 7 desenhos</h3>
+
+      <div class="gallery">
+
+        <figure>
+          <img src="desenho-abril-01.jpg" alt="Desenho de abril 1">
+          <figcaption>Abril — Desenho 1</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-abril-02.jpg" alt="Desenho de abril 2">
+          <figcaption>Abril — Desenho 2</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-abril-03.jpg" alt="Desenho de abril 3">
+          <figcaption>Abril — Desenho 3</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-abril-04.jpg" alt="Desenho de abril 4">
+          <figcaption>Abril — Desenho 4</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-abril-05.jpg" alt="Desenho de abril 5">
+          <figcaption>Abril — Desenho 5</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-abril-06.jpg" alt="Desenho de abril 6">
+          <figcaption>Abril — Desenho 6</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-abril-07.jpg" alt="Desenho de abril 7">
+          <figcaption>Abril — Desenho 7</figcaption>
+        </figure>
+
+      </div>
+    </div>
+
+    <!-- MARÇO: MAIS ANTIGO -->
+    <div class="month-section">
+      <h3>🌸 Março — 14 desenhos</h3>
+
+      <div class="gallery">
+
+        <figure>
+          <img src="desenho-marco-01.jpg" alt="Desenho de março 1">
+          <figcaption>Março — Desenho 1</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-marco-02.jpg" alt="Desenho de março 2">
+          <figcaption>Março — Desenho 2</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-marco-03.jpg" alt="Desenho de março 3">
+          <figcaption>Março — Desenho 3</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-marco-04.jpg" alt="Desenho de março 4">
+          <figcaption>Março — Desenho 4</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-marco-05.jpg" alt="Desenho de março 5">
+          <figcaption>Março — Desenho 5</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-marco-06.jpg" alt="Desenho de março 6">
+          <figcaption>Março — Desenho 6</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-marco-07.jpg" alt="Desenho de março 7">
+          <figcaption>Março — Desenho 7</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-marco-08.jpg" alt="Desenho de março 8">
+          <figcaption>Março — Desenho 8</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-marco-09.jpg" alt="Desenho de março 9">
+          <figcaption>Março — Desenho 9</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-marco-10.jpg" alt="Desenho de março 10">
+          <figcaption>Março — Desenho 10</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-marco-11.jpg" alt="Desenho de março 11">
+          <figcaption>Março — Desenho 11</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-marco-12.jpg" alt="Desenho de março 12">
+          <figcaption>Março — Desenho 12</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-marco-13.jpg" alt="Desenho de março 13">
+          <figcaption>Março — Desenho 13</figcaption>
+        </figure>
+
+        <figure>
+          <img src="desenho-marco-14.jpg" alt="Desenho de março 14">
+          <figcaption>Março — Desenho 14</figcaption>
+        </figure>
+
+      </div>
+    </div>
+
+  </div>
+
+</section>
+    <!-- QUARTA ABA: AVALIAÇÕES -->
     <section id="avaliacoes" class="tab-content">
 
       <div class="card">
@@ -706,7 +1063,7 @@
 
     </section>
 
-    <!-- QUARTA ABA: FILA DE ESPERA -->
+    <!-- QUINTA ABA: FILA DE ESPERA -->
     <section id="fila" class="tab-content">
 
       <div class="card">
@@ -718,7 +1075,6 @@
 
         <div class="queue-list">
 
-          <!-- PRIMEIRO CLIENTE -->
           <div class="queue-item">
             <span class="queue-number">1</span>
 
@@ -734,7 +1090,6 @@
             </span>
           </div>
 
-          <!-- SEGUNDO CLIENTE -->
           <div class="queue-item">
             <span class="queue-number">2</span>
 
@@ -750,7 +1105,6 @@
             </span>
           </div>
 
-          <!-- TERCEIRO CLIENTE -->
           <div class="queue-item">
             <span class="queue-number">3</span>
 
@@ -766,7 +1120,6 @@
             </span>
           </div>
 
-          <!-- QUARTO CLIENTE: SPECE -->
           <div class="queue-item">
             <span class="queue-number">4</span>
 
@@ -782,20 +1135,21 @@
             </span>
           </div>
 
-      <!-- ESPAÇO PARA FUTURO CLIENTE -->
-      <div class="queue-item empty-queue">
-        <span class="queue-number">5</span>
+          <div class="queue-item empty-queue">
+            <span class="queue-number">5</span>
 
-        <h3>Próximo cliente</h3>
+            <h3>Próximo cliente</h3>
 
-        <p>
-          <strong>Pedido:</strong><br>
-          Espaço reservado para uma nova comissão.
-        </p>
+            <p>
+              <strong>Pedido:</strong><br>
+              Espaço reservado para uma nova comissão.
+            </p>
 
-        <span class="queue-status">
-          📝 Disponível
-        </span>
+            <span class="queue-status">
+              📝 Disponível
+            </span>
+          </div>
+
         </div>
       </div>
 
@@ -808,51 +1162,65 @@
     © 2026 — COMISSÕES DA MIH
   </footer>
 
-  <!-- JANELA PARA AMPLIAR AS IMAGENS -->
+  <!-- MODAL PARA AMPLIAR AS IMAGENS -->
   <div class="modal" id="imageModal">
 
-    <button class="close-modal" aria-label="Fechar imagem">
+    <button
+      type="button"
+      class="close-modal"
+      aria-label="Fechar imagem"
+    >
       &times;
     </button>
 
-    <img id="modalImage" src="" alt="Imagem ampliada">
+    <img
+      id="modalImage"
+      src=""
+      alt="Imagem ampliada"
+    >
 
   </div>
 
+  <!-- JAVASCRIPT DAS ABAS E IMAGENS -->
   <script>
-    const buttons = document.querySelectorAll(".tab-button");
-    const contents = document.querySelectorAll(".tab-content");
+    const botoes = document.querySelectorAll(".tab-button");
+    const abas = document.querySelectorAll(".tab-content");
 
-    buttons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const tabId = button.dataset.tab;
+    botoes.forEach((botao) => {
+      botao.addEventListener("click", () => {
+        const nomeDaAba = botao.getAttribute("data-tab");
 
-        buttons.forEach((item) => {
+        botoes.forEach((item) => {
           item.classList.remove("active");
         });
 
-        contents.forEach((content) => {
-          content.classList.remove("active");
+        abas.forEach((aba) => {
+          aba.classList.remove("active");
         });
 
-        button.classList.add("active");
-        document.getElementById(tabId).classList.add("active");
+        botao.classList.add("active");
+
+        const abaSelecionada = document.getElementById(nomeDaAba);
+
+        if (abaSelecionada) {
+          abaSelecionada.classList.add("active");
+        }
       });
     });
 
     const modal = document.getElementById("imageModal");
     const modalImage = document.getElementById("modalImage");
-    const closeModal = document.querySelector(".close-modal");
+    const fecharModal = document.querySelector(".close-modal");
 
-    document.querySelectorAll(".gallery img").forEach((image) => {
-      image.addEventListener("click", () => {
-        modalImage.src = image.src;
-        modalImage.alt = image.alt;
+    document.querySelectorAll(".gallery img").forEach((imagem) => {
+      imagem.addEventListener("click", () => {
+        modalImage.src = imagem.src;
+        modalImage.alt = imagem.alt;
         modal.classList.add("show");
       });
     });
 
-    closeModal.addEventListener("click", () => {
+    fecharModal.addEventListener("click", () => {
       modal.classList.remove("show");
     });
 
